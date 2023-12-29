@@ -1,0 +1,67 @@
+$fullname=$_POST['fullname'];
+     
+     $regno=$_POST['regno'];
+     $ss1=$_POST['ss1'];
+     $ss2=$_POST['ss2'];
+     $ss3=$_POST['ss3'];
+     $ss4=$_POST['ss4'];
+     $ss5=$_POST['ss5'];
+     $internal_mark1=(($ss1+$ss2)/40)*30;
+     $internal_mark2=(($ss3+$ss4+$ss5)/15)*10;
+     $internal_mark=$internal_mark1+$internal_mark2;
+    
+     $query="insert into studentmarks(fullname,subcode,regno,ss1,ss2,ss3,ss4,ss5,internalmarks) values('$fullname','$subcode','$regno','$ss1','$ss2','$ss3','$ss4','$ss5','$internal_mark')";
+     
+     if(mysqli_query($con,$query))
+     {
+        
+         ?>
+         <script>
+             alert("Details added)");
+         </script>
+         <!---<?php header('location:tlogin.php'); ?>-->
+         <?php
+     }
+     else
+     {
+             ?>
+         <script>
+             alert("action not successful");
+         </script>
+         
+         <?php
+             
+     }
+     $query2="update students set internalmarks=$internal_mark where regno=$regno";
+     if(mysqli_query($con,$query2))
+     {
+        
+         ?>
+         <script>
+             alert("Details added)");
+         </script>
+         <!---<?php header('location:tlogin.php'); ?>-->
+         <?php
+     }
+     else
+     {
+             ?>
+         <script>
+             alert("action not successful");
+         </script>
+         
+         <?php
+             
+     }
+    
+
+     
+
+    }
+    \
+
+
+
+    <td><a href="update.php?regno=<?php echo $row['regno']?> &name=<?php echo $row['name']?> &ss1=<?php echo $row['ss1']?> &ss2=<?php echo $row['ss2']?> &assign1=<?php echo $row['assign1']?> &assign2=<?php echo $row['assign2']?> &sem=<?php echo $row['sem']?> &atten=<?php echo $row['atten']?> &internalmarks=<?php echo $row['internalmarks']?>">UPDATE</a></td>
+
+    $query="SELECT s.regno,s.name,sm.ss1,sm.ss2,sm.assign1,sm.assign2,sm.sem,sm.atten,sm.internalmarks FROM students s, studentmarks sm where s.regno=sm.regno AND  sm.subcode='$subcode'" ;

@@ -1,0 +1,88 @@
+.cart-table
+ {
+      
+      padding-top: 70px;
+      padding-left: 20px;
+ }
+.sub-cart
+{
+    background-color:#CA8FA5;
+    height: 250px;
+    width: 300px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+     
+}
+.fa-trash
+{
+    color: black;
+}
+.fa-trash:hover
+{
+    color: grey;
+}
+h3{
+    font-size: 30px;
+    
+    padding-left: 25px;
+    font-family: 'Nanum Myeongjo', serif;
+}
+.sub-cart-content
+{
+     
+     display: flex;
+     justify-content: space-between;
+}
+.sub-cart h4
+{
+     padding-left: 20px;
+     padding-top: 30px;
+
+}
+.sub-cart-content ul
+{
+     padding: 20px;
+     text-decoration: none;
+}
+.sub-cart-content li
+{
+    list-style: none;
+}
+.sub-cart-button
+{
+     
+    margin-left: 20px;
+    margin-top: 30px;
+    padding: 15px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+
+}
+
+.sub-cart-button
+{   
+    width: 150px;
+    background-color: #e8e4e6;
+    border-radius: 5px;
+    box-shadow: inset 0 0 0 0 #c294b3;
+    transition:ease-out 0.3s;
+    color: white;
+    padding: 8px;
+}
+.sub-cart-button:hover
+{
+    box-shadow: inset 150px 0 0 0 #994d6a;
+}
+.sub-cart-button a{
+     text-decoration: none;
+     color:#994d6a ;
+}
+.sub-cart-button a:hover{
+     text-decoration: none;
+     color:#e8e4e6 ;
+}
+
